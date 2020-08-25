@@ -1,0 +1,7 @@
+{
+  "mongoURI": "mongodb+srv://wuchau:a68713445@devconnector-o5amo.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "9075e5ac0a3d682b14dd",
+  "githubSecret": "0355672bec62e8a4648df8dedb1e7444b6c0ecc7",
+  "githubToken": ""
+}
