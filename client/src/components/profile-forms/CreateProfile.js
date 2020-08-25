@@ -42,10 +42,10 @@ const CreateProfile = ({
     instagram
   } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     createProfile(formData, history);
   };
@@ -60,8 +60,8 @@ const CreateProfile = ({
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
       <p className="lead">
-        <i className="fas fa-user" /> Let's get some information to make your
-        profile stand out
+        <i className="fas fa-user" />
+        information of your profile
       </p>
       <small>* = required field</small>
       <form className="form" onSubmit={onSubmit}>
@@ -77,9 +77,7 @@ const CreateProfile = ({
             <option value="Intern">Intern</option>
             <option value="Other">Other</option>
           </select>
-          <small className="form-text">
-            Give us an idea of where you are at in your career
-          </small>
+          <small className="form-text">your position</small>
         </div>
         <div className="form-group">
           <input
@@ -89,9 +87,7 @@ const CreateProfile = ({
             value={company}
             onChange={onChange}
           />
-          <small className="form-text">
-            Could be your own company or one you work for
-          </small>
+          <small className="form-text">company you are working</small>
         </div>
         <div className="form-group">
           <input
@@ -101,9 +97,7 @@ const CreateProfile = ({
             value={website}
             onChange={onChange}
           />
-          <small className="form-text">
-            Could be your own or a company website
-          </small>
+          <small className="form-text">personal web</small>
         </div>
         <div className="form-group">
           <input
@@ -113,9 +107,7 @@ const CreateProfile = ({
             value={location}
             onChange={onChange}
           />
-          <small className="form-text">
-            City & state suggested (eg. Boston, MA)
-          </small>
+          <small className="form-text">city and country</small>
         </div>
         <div className="form-group">
           <input
@@ -125,23 +117,9 @@ const CreateProfile = ({
             value={skills}
             onChange={onChange}
           />
-          <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
-          </small>
+          <small className="form-text">(eg. HTML,CSS,JavaScript,PHP)</small>
         </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={onChange}
-          />
-          <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
-          </small>
-        </div>
+
         <div className="form-group">
           <textarea
             placeholder="A short bio of yourself"
@@ -149,7 +127,7 @@ const CreateProfile = ({
             value={bio}
             onChange={onChange}
           />
-          <small className="form-text">Tell us a little about yourself</small>
+          <small className="form-text">Tell us about yourself</small>
         </div>
 
         <div className="my-2">
@@ -235,7 +213,7 @@ CreateProfile.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired
 };
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   profile: state.profile
 });
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
